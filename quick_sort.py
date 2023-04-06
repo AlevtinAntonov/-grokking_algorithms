@@ -12,7 +12,7 @@ def quick_sort(array):
 
 
 array1 = [1, 12, 2, 5, 3, 10]
-array2 = [12, 2]
+
 print(quick_sort(array1))
 
 
