@@ -20,20 +20,21 @@ print(binary_search(my_list, 9))
 print(binary_search(my_list, 6))
 print(binary_search(my_list, 1))
 
-def findSmallest(arr):
-    smallest = arr[0]
-    smallest_index = 0
-    for i in range(1, len(arr)):
-        if arr[i] < smallest:
-            smallest = arr[i]
-            smallest_index = i
-    return smallest_index
+def binary_search_2(arr, target):
+    if not arr:
+        return -1
 
-def selectionSort(arr):
-    newArr = []
-    for i in range(len(arr)):
-        smallest = findSmallest(arr)
-        newArr.append(arr.pop(smallest))
-    return newArr
+    low = 0
+    high = len(arr) - 1
+    mid = (low + high) // 2
 
-print(selectionSort([5, 3, 2, 10]))
+    if arr[mid] == target:
+        return target
+    elif arr[mid] > target:
+        return binary_search_2(arr[:mid], target)
+    else:
+        return binary_search_2(arr[mid+1:], target)
+
+
+print(binary_search_2([6, 7, 8, 9, 10], 7))
+print(binary_search_2([6, 7, 8, 9, 10], 100))
