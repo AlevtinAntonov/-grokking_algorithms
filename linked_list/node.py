@@ -10,9 +10,9 @@ class Node:
             n = n.next
         n.next = end
 
-ll = Node(1)
-ll.append(2)
-ll.append(3)
+ll = Node(100)
+ll.append(200)
+ll.append(300)
 
 node = ll
 print(node.data)
