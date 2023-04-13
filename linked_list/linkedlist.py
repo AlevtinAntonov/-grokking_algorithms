@@ -10,7 +10,7 @@ class LinkedList:
     def contains(self, cat):
         last_box = self.head
         while last_box:
-            if cat == last_box.cat:
+            if cat == last_box.node:
                 return True
             else:
                 last_box = last_box.next_cat
@@ -31,7 +31,7 @@ class LinkedList:
         box_index = 0
         while box_index <= cat_index:
             if box_index == cat_index:
-                return last_box.cat
+                return last_box.node
             box_index = box_index + 1
             last_box = last_box.next_cat
 
@@ -39,12 +39,12 @@ class LinkedList:
         head_cat = self.head
 
         if head_cat is not None:
-            if head_cat.cat == rm_cat:
+            if head_cat.node == rm_cat:
                 self.head = head_cat.next_cat
                 head_cat = None
                 return
         while head_cat is not None:
-            if head_cat.cat == rm_cat:
+            if head_cat.node == rm_cat:
                 break
             last_cat = head_cat
             head_cat = head_cat.next_cat
@@ -59,7 +59,7 @@ class LinkedList:
         print("-----")
         i = 0
         while current_cat is not None:
-            print(str(i) + ": " + str(current_cat.cat))
+            print(str(i) + ": " + str(current_cat.node))
             i += 1
             current_cat = current_cat.next_cat
         print("-----")

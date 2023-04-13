@@ -69,24 +69,43 @@ class LinkedList:
             node = node.next_node
         old_node.next_node = None
 
+    def reverse_lst(self, head):
+
+        current = head
+        new_head = None
+
+        while current:
+            node = Node(current.value)
+
+            # Assign the new head to node's next
+            node.next_node = new_head
+
+            # Assign the node to new head
+            new_head = node
+            current = current.next_node
+
+        return new_head
+
 
 a = LinkedList()
 a.add_to_end(12)
 a.add_to_end(24)
 a.add_to_end(36)
 print(a.print_linked_list())
-a.add_to_node(26, 24)
-print(a.print_linked_list())
-a.del_end()
-print(a.print_linked_list())
-a.del_end()
-print(a.print_linked_list())
-a.del_end()
-print(a.print_linked_list())
-a.del_end()
-print(a.print_linked_list())
-a.del_end()
-print(a.print_linked_list())
+# a.reverse_lst()
+print(a.reverse_lst(a.head))
+# a.add_to_node(26, 24)
+# print(a.print_linked_list())
+# a.del_end()
+# print(a.print_linked_list())
+# a.del_end()
+# print(a.print_linked_list())
+# a.del_end()
+# print(a.print_linked_list())
+# a.del_end()
+# print(a.print_linked_list())
+# a.del_end()
+# print(a.print_linked_list())
 # print(a.print_linked_list())
 # a.del_head()
 # print(a.print_linked_list())
